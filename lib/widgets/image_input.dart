@@ -40,8 +40,8 @@ class _ImageInputState extends State<ImageInput> {
     // we can use File() method to open the file at the provided path location
     // path is a string
     var savedImage = File(appDir.path + '/' + fileName);
-    //print(savedImage);
-
+    print(savedImage);
+//C4C21A8E-D9E3-4131-A8F6-B064FE4035AF/Documents/image_picker_2263FEEE-23D6-4769-ABA3-04AC258AE8A2-75554-0000059192EF4021.jpg'
     widget.onSelectImage(savedImage);
   }
 

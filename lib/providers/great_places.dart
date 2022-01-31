@@ -12,6 +12,7 @@ class GreatPlaces with ChangeNotifier {
   }
 
   void saveGreatPlace(String pickedTitle, File pickedImage) {
+    print('in save place');
     var newPlace = Place(
       id: DateTime.now().toString(),
       title: pickedTitle,
@@ -19,7 +20,7 @@ class GreatPlaces with ChangeNotifier {
       location: null,
     );
     //_items.add(newPlace);
-    notifyListeners();
+
     var data = {
       'id': newPlace.id,
       'title': newPlace.title,
@@ -27,6 +28,7 @@ class GreatPlaces with ChangeNotifier {
       // we need to pass the path here (Sting) not the File object
     };
     DBHelper.insert('user_places', data);
+    notifyListeners();
   }
 
   Future<void> fetchAndSetPlace() async {

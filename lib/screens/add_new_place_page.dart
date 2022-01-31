@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:great_places_app/providers/great_places.dart';
 import 'package:great_places_app/widgets/image_input.dart';
+import 'package:great_places_app/widgets/location_input.dart';
 import 'package:provider/provider.dart';
 
 class AddNewPlacePage extends StatelessWidget {
@@ -36,6 +37,8 @@ class AddNewPlacePage extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   ImageInput(saveImage),
+                  SizedBox(height: 10),
+                  LocationInput()
                 ],
               ),
             ),
