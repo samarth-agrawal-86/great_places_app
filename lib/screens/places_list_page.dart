@@ -5,22 +5,7 @@ import 'package:great_places_app/providers/great_places.dart';
 import 'package:great_places_app/screens/add_new_place_page.dart';
 import 'package:provider/provider.dart';
 
-class PlacesListPage extends StatefulWidget {
-  const PlacesListPage({Key? key}) : super(key: key);
-
-  @override
-  State<PlacesListPage> createState() => _PlacesListPageState();
-}
-
-class _PlacesListPageState extends State<PlacesListPage> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    print('init called');
-    //Provider.of<GreatPlaces>(context, listen: false).fetchAndSetPlace();
-  }
-
+class PlacesListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print('build called');
@@ -37,8 +22,8 @@ class _PlacesListPageState extends State<PlacesListPage> {
         ],
       ),
       body: FutureBuilder(
-        future:
-            Provider.of<GreatPlaces>(context, listen: false).fetchAndSetPlace(),
+        future: Provider.of<GreatPlaces>(context, listen: false)
+            .fetchAndSetPlaces(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return CircularProgressIndicator();

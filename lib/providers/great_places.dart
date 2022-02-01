@@ -19,7 +19,7 @@ class GreatPlaces with ChangeNotifier {
       image: pickedImage,
       location: null,
     );
-    //_items.add(newPlace);
+    _items.add(newPlace);
 
     var data = {
       'id': newPlace.id,
@@ -31,7 +31,7 @@ class GreatPlaces with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> fetchAndSetPlace() async {
+  Future<void> fetchAndSetPlaces() async {
     var places = await DBHelper.getData('user_places');
     List<Place> _results = [];
     for (var place in places) {
